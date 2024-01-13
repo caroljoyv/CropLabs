@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Detected!!</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* body {
+            background: #0000;
+            font-family: "Exo 2";
+        }
+
+        h1 {
+            text-align: center;
+            color: #EB6A5A;
+        }
+        p {
+            text-align: center;
+            color: rebeccapurple;
+        } */
+
+        * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|Poppins:300,400,600,800&display=swap");
+body {
+  background-color: #161619;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.box {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #cbe4de;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 800px;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: 0.4s;
+  text-align: center;
+}
+
+.box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-top: 20px solid #75dab4;
+  border-left: 20px solid #75dab4;
+  box-sizing: border-box;
+}
+
+.box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 20px solid #75dab4;
+  border-right: 20px solid #75dab4;
+  box-sizing: border-box;
+}
+
+.box .fas {
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px !important;
+  background-color: #fff;
+  color: #2C3A47;
+}
+
+.box .fa2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.box .text {
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  width: calc(100% + 60px);
+  height: calc(100% - 60px);
+  background-color: #2e4f4f;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+.box .text .fa1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box .text div {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  padding: 30px 60px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.box .text div h3 {
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.box .text div p {
+  font-size: 30px;
+}
+
+.box:hover .text {
+  transform: rotateY(20deg) skewY(-3deg);
+}
+
+.box:hover {
+  transform: translate(-50%, -50%) rotateY(-20deg) skewY(3deg);
+}
+
+
+/* CSS for the satisfaction button and container */
+.satisfaction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+}
+
+.satisfaction-text {
+    font-size: 20px;
+    color: #cbe4de; /* Adjust the color as needed */
+}
+
+.satisfaction-button {
+    background-color: #2e4f4f; /* Green background color */
+    color: #cbe4de;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin: 10px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.satisfaction-button:hover {
+    background-color: #2e4f4f; /* Darker green on hover */
+}
+
+.satisfact {
+    display: flex; /* Display buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center;
+    /* Center buttons vertically */
+}
+
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+}
+
+.circle {
+    width: 70px; /* Adjust the size of the circle */
+  height: 70px;
+  background-color: #2e4f4f; /* Circle background color */
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    
+    border-top: 15px solid transparent; /* Adjust the size as needed */
+    border-bottom: 15px solid transparent; /* Adjust the size as needed */
+    border-left: 25px solid #fff; /* Adjust the size and color as needed */
+    transform: rotate(180deg);
+}
+
+/* Add hover effect */
+.circle:hover {
+    background-color: #58ba95;
+}
+
+.fa-chevron-left {
+  font-size: 36px; /* Adjust the size of the chevron icon */
+  color: #cbe4de; /* Chevron color */
+}
+
+.fa-chevron-left:hover {
+  font-size: 36px; /* Adjust the size of the chevron icon */
+  color: #161619; /* Chevron color */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="back-button">
+        <a href="http://localhost:8000/" style="text-decoration: none;">
+            <div class="circle">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+        </a>
+    </div>
+    <div class="box">
+        <div class="text">
+            <div>
+                <h3>Prediction Result</h3>
+            <p>{{ prediction_result }}</p>
+            <br>
+
+            <p>{{ summary }}</p>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <div class="satisfaction-container">
+        <p class="satisfaction-text">Was this response helpful?</p>
+        <div class="satisfact">
+            <button id="satisfaction-button" class="satisfaction-button">Yes</button>
+            <a href="/home/jae-silver/hack@arch/Vastumex/index.html">
+              <button id="satisfaction-button" class="satisfaction-button">No</button>
+            </a>
+            
+        </div>
+        
+    </div>
+    
+
+</body>
+
+
+<script>
+    const regenerateButton = document.getElementById("regenerate-button");
+
+    regenerateButton.addEventListener("click", async () => {
+       const existingSummary = summaryDiv.innerHTML;
+
+    // Make a request to your server to regenerate the summary using Hugging Face AI
+        const response = await fetch("/regenerate-summary", {
+            method: "POST",
+            body: JSON.stringify({ existingSummary }), // Send the existing summary to the server
+            headers: {
+             "Content-Type": "application/json",
+            },
+        });
+
+        if (response.ok) {
+            const newSummary = await response.text();
+            summaryDiv.innerHTML = newSummary;
+        } else {
+            // Handle error in case of regeneration failure
+            alert("Summary regeneration failed.");
+        }
+    });
+
+</script>
+</html>
