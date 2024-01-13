@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="WhatsApp Image 2023-10-29 at 5.55.09 AM (1).jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>QR code component | Gabe</title>
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+body {
+  background: #161619;
+  font-family: "outfit", sans-serif;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.box {
+  box-shadow: 1px 0 3px hsl(212, 45%, 89%);
+  width: 300px;
+  height: 460px;
+  background-repeat: repeat;
+  background-size: cover;
+  background-color:hsl(0, 0%, 100%);
+  color:hsl(218, 44%, 22%);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+
+.qrcode {
+  max-height: 290px;
+  border-radius: 15px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: -10px;
+}
+h3 {
+  font-weight: 400;
+  font-size: 16px;
+  color: hsl(220, 15%, 55%);
+}
+
+.attribution {
+    font-size: 11px;
+  text-align: center;
+}
+
+.texts {
+  padding: 1rem 1rem;
+}
+
+a {
+  color: hsl(220, 15%, 55%);
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+}
+
+.circle {
+    width: 70px; /* Adjust the size of the circle */
+  height: 70px;
+  background-color: #2e4f4f; /* Circle background color */
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    
+    border-top: 15px solid transparent; /* Adjust the size as needed */
+    border-bottom: 15px solid transparent; /* Adjust the size as needed */
+    border-left: 25px solid #fff; /* Adjust the size and color as needed */
+    transform: rotate(180deg);
+}
+
+/* Add hover effect */
+.circle:hover {
+    background-color: #58ba95;
+}
+
+.fa-chevron-left {
+  font-size: 36px; /* Adjust the size of the chevron icon */
+  color: #cbe4de; /* Chevron color */
+}
+
+.fa-chevron-left:hover {
+  font-size: 36px; /* Adjust the size of the chevron icon */
+  color: #161619; /* Chevron color */
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+
+    <div class="back-button">
+        <a href="/home/jae-silver/hack@arch/Vastumex/index.html" style="text-decoration: none;">
+            <div class="circle">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+        </a>
+    </div>
+  <main class="container">
+    <div class="box">
+    <img class="qrcode" src="WhatsApp Image 2023-10-29 at 5.55.09 AM (1).jpeg" />
+    <div class="texts">
+      <h1>Improving experience by personalized chatbot services</h1>
+      <h3>Scan the QR code to visit Telegram and take on the wonderful journey</h3>
+      </div>
+      </div>
+  </main>
+   <!-- <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Ebagyu">Gabe</a>.
+  </footer> -->
+</body>
+
+</html>

@@ -393,6 +393,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 import wikipedia
+
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import RedirectResponse
 from transformers import pipeline

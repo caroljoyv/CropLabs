@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropLabs</title>
+
+
+    <style>
+        @import url("https://blokkfont-losgordos.netdna-ssl.com/v2/blokkfont.css");
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+    margin: 25px;
+    background: #161619;
+    font-family: "BLOKK", "Raleway", sans-serif;
+}
+
+h2 {
+    margin: 25px;
+    color: #cbe4de;
+    font-size: 35px;
+}
+
+p{
+    margin: 25px;
+    color: #cbe4de;
+    font-size: 25px;
+}
+
+.wrapper {
+    display: flex;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar {
+    background: #2C3A47;
+    width: 25vw;
+    height: 90vh;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+    z-index: 9;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+.chat-container {
+    width: 75vw;
+    height: 91.5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    flex-shrink: 1;
+    width: 100%;
+    height: 70px;
+    background: white;
+    border-top-right-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+    z-index: 9;
+}
+
+.chat-window {
+    flex-grow: 9;
+    width: 100%;
+    height: 50px;
+    background: white;
+}
+
+.user-info {
+    background: #E9EBE8;
+    margin: 10px 15px;
+    width: 20vw;
+    height: 69%;
+    border-top-left-radius: 25px 25px;
+    border-bottom-left-radius: 25px 25px;
+    border-top-right-radius: 25px 25px;
+    border-bottom-right-radius: 25px 25px;
+}
+
+.bottom-bar {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 50px;
+    background: white;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.chat-input {
+    flex-grow: 8;
+    border: 0;
+    padding-left: 20px;
+    outline: none;
+}
+
+.send-btn {
+    flex-shrink: 1;
+    border: 0;
+    border-bottom-right-radius: 10px;
+    background: white;
+}
+
+.send-btn:focus {
+    outline: none;
+}
+
+.send-btn:hover {
+    background: linen;
+}
+
+.send-btn .material-icons {
+    transition: all 0.3s ease-out;
+    transform: scale(1.2) rotateZ(-90deg);
+}
+
+.material-icons {
+    color: #E23272;
+    padding: 10px;
+    transform: rotateZ(-90deg);
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        display: none;
+    }
+
+    .chat-container {
+        flex-grow: 1;
+    }
+
+    .chat-window {
+        position: static;
+        width: 100%;
+    }
+
+    .top-bar {
+        border-top-left-radius: 10px;
+        position: static;
+        width: 100%;
+    }
+
+    .chat-input, .bottom-bar {
+        border-bottom-left-radius: 10px;
+        position: static;
+        width: 100%;
+    }
+
+    .user-info {
+        width: 40vw;
+        position: static;
+    }
+}
+
+.suggested-prompts {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    position: absolute;
+    bottom: 130px;
+    right: 60px;
+}
+
+.prompt-btn {
+    background: #2C3A47;
+    color: #cbe4de;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 20px 100px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.prompt-btn:hover {
+    background: #2d363f; /* Change to your desired hover color */
+}
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>CropLabs</h2>
+            <p>Our platform helps you identify crop diseases, recommends the right crops, and suggests optimal fertilizers. Whether you're a large-scale or small-scale farmer, we've got your back for improved yields and healthier crop</p>
+        </div>
+        <div class="chat-container">
+            <div class="top-bar">
+                <div class="user-info">
+                    
+                </div>
+            </div>
+            <div class="chat-window">
+                <div class="suggested-prompts">
+                    <a href="http://localhost:8000/">
+                        <button class="prompt-btn">Disease Identification</button>
+                    </a>
+                    <button class="prompt-btn">Crop Reccomendation</button>
+                    <button class="prompt-btn">Fertilizer Suggestion</button>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <input class="chat-input" type="text" placeholder="">
+                <button id="send-btn" class="send-btn" type="submit">
+                    <i class="material-icons favorite"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const sendButton = document.getElementById('send-btn');
+
+function myFunc(){
+	sendButton.classList.toggle('blah'); //TODO: make a new class
+}
+
+sendButton.addEventListener("click", myFunc);
+    </script>
+    
+</body>
+</html>
